@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MackeyIT | Dependable IT Support</title>
+  <meta
+    name="description"
+    content="MackeyIT provides dependable IT support for individuals and small businesses in Richardson, Dallas, and Plano."
+  />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #1c1c1c;
+      background-color: #f4f7fb;
+    }
+
+    header {
+      background: #0a2342;
+      color: white;
+      padding: 18px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: #3db7ff;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 15px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #3db7ff;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0a2342, #134074);
+      color: white;
+      padding: 100px 20px 80px;
+    }
+
+    .hero-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      line-height: 1.15;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 650px;
+      margin-bottom: 28px;
+      color: #e2ebf5;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.95;
+    }
+
+    .btn-primary {
+      background: #3db7ff;
+      color: #0a2342;
+    }
+
+    .btn-secondary {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 28px;
+      backdrop-filter: blur(5px);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 14px;
+      font-size: 22px;
+    }
+
+    .hero-card ul {
+      list-style: none;
+    }
+
+    .hero-card li {
+      margin-bottom: 12px;
+      padding-left: 22px;
+      position: relative;
+    }
+
+    .hero-card li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #3db7ff;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 70px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 34px;
+      color: #0a2342;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      color: #5a6573;
+      font-size: 17px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 26px;
+      box-shadow: 0 6px 20px rgba(8, 28, 58, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 26px rgba(8, 28, 58, 0.12);
+    }
+
+    .card h3 {
+      color: #0a2342;
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: #52606d;
+      font-size: 15px;
+    }
+
+    .about-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(8, 28, 58, 0.08);
+    }
+
+    .about-box h3 {
+      color: #0a2342;
+      margin-bottom: 15px;
+      font-size: 28px;
+    }
+
+    .about-box p {
+      color: #52606d;
+      margin-bottom: 14px;
+    }
+
+    .contact-section {
+      background: #0a2342;
+      color: white;
+    }
+
+    .contact-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      align-items: start;
+    }
+
+    .contact-box {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 28px;
+      border-radius: 14px;
+    }
+
+    .contact-box h3 {
+      margin-bottom: 18px;
+      font-size: 26px;
+    }
+
+    .contact-box p,
+    .contact-box a {
+      color: #e6eef7;
+      font-size: 16px;
+      text-decoration: none;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .contact-box a:hover {
+      color: #3db7ff;
+    }
+
+    footer {
+      background: #061629;
+      color: #c8d4e3;
+      text-align: center;
+      padding: 22px 20px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 850px) {
+      .hero-content,
+      .about-wrapper,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .logo {
+        font-size: 24px;
+      }
+
+      .nav-links {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .nav-links a {
+        margin-left: 0;
+      }
+
+      .hero {
+        padding-top: 80px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">Mackey<span>IT</span></div>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div>
+        <h1>Dependable IT Support for Individuals and Small Businesses</h1>
+        <p>
+          Doing the work, so you don't have to. MackeyIT helps keep your tech clean,
+          organized, connected, and running smoothly with practical, reliable support.
+        </p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Contact Us</a>
+          <a href="#services" class="btn btn-secondary">View Services</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Why Choose MackeyIT?</h3>
+        <ul>
+          <li>Dependable support you can trust</li>
+          <li>Help for both homes and small businesses</li>
+          <li>Simple solutions without the tech confusion</li>
+          <li>Service in Richardson, Dallas, and Plano</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">
+        We provide straightforward IT help to keep your devices, workspaces, and basic systems in good shape.
+      </p>
+
+      <div class="services-grid">
+        <div class="card">
+          <h3>PC Repairs</h3>
+          <p>
+            Help with slow computers, startup issues, hardware problems, and general desktop or laptop troubleshooting.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Office Setup</h3>
+          <p>
+            Assistance with workstation setup, monitors, printers, peripherals, and making sure your workspace is ready to go.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Cable Management</h3>
+          <p>
+            Clean up messy wires and create a more professional, organized, and functional home or office setup.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Basic Troubleshooting</h3>
+          <p>
+            Support for common tech issues, connection problems, device setup, and day-to-day IT concerns.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Device Cleaning</h3>
+          <p>
+            Basic equipment cleaning to help maintain a cleaner setup and improve the appearance of your devices and workspace.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>General IT Support</h3>
+          <p>
+            Dependable tech support for individuals and small businesses that need practical help without overcomplication.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container about-wrapper">
+      <div class="about-box">
+        <h3>About MackeyIT</h3>
+        <p>
+          MackeyIT provides dependable IT support for both individuals and small businesses.
+        </p>
+        <p>
+          Our goal is simple: handle the tech work so you can focus on what matters most.
+          Whether you need help with office setup, PC repairs, cable management, cleaning,
+          or basic troubleshooting, MackeyIT is here to help.
+        </p>
+      </div>
+
+      <div class="about-box">
+        <h3>Our Approach</h3>
+        <p>
+          We believe tech support should be clear, honest, and helpful. No unnecessary confusion.
+          No overcomplicated jargon. Just practical service that gets things working the way they should.
+        </p>
+        <p>
+          <strong>Doing the work, so you don't have to.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-title" style="color: white;">Contact Us</h2>
+      <p class="section-subtitle" style="color: #d4e0ee;">
+        Ready to get help with your tech? Reach out today.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-box">
+          <h3>MackeyIT</h3>
+          <a href="mailto:ddm2007a@gmail.com">ddm2007a@gmail.com</a>
+          <a href="tel:2148830227">(214) 883-0227</a>
+          <p>Service Area: Richardson / Dallas / Plano</p>
+          <p>Website: mackeyit.com</p>
+        </div>
+
+        <div class="contact-box">
+          <h3>Need Support?</h3>
+          <p>
+            Contact MackeyIT for dependable help with your setup, repairs, troubleshooting,
+            and basic IT support needs.
+          </p>
+          <p>Click below to send us a quick request and we’ll get back to you ASAP.</p>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ddm2007a@gmail.com&su=IT Support Request&body=Hi MackeyIT,%0D%0A%0D%0AI need help with:%0D%0A- Issue:%0D%0A- Location:%0D%0A- Callback Number:%0D%0A- Preferred Time:"
+   target="_blank"
+   class="btn btn-primary"
+   style="display: inline-block; margin-top: 10px;">
+            Email Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 MackeyIT. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
