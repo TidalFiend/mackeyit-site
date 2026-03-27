@@ -240,7 +240,6 @@
       margin-bottom: 14px;
     }
 
-    /* ── Contact Section ── */
     .contact-section {
       background: #0a2342;
       color: white;
@@ -279,7 +278,6 @@
       color: #3db7ff;
     }
 
-    /* ── Contact Form ── */
     .contact-form {
       display: flex;
       flex-direction: column;
@@ -358,7 +356,6 @@
       opacity: 0.92;
     }
 
-    /* Success / error messages */
     .form-message {
       display: none;
       padding: 12px 16px;
@@ -530,29 +527,25 @@
     </div>
   </section>
 
-  <!-- ── Contact Section ── -->
   <section id="contact" class="contact-section">
     <div class="container">
       <h2 class="section-title" style="color: white;">Contact Us</h2>
       <p class="section-subtitle" style="color: #d4e0ee;">
-        Ready to get help with your tech? Fill out the form and we'll get back to you ASAP.
+        Ready to get help with your tech? Fill out the form and we'll get back to you within 48 hours or less.
       </p>
 
       <div class="contact-grid">
 
-        <!-- Left: contact info -->
         <div class="contact-box">
           <h3>MackeyIT</h3>
-          <a href="mailto:ddm2007a@gmail.com">ddm2007a@gmail.com</a>
-          <a href="tel:2148830227">(214) 883-0227</a>
+          <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#100;&#100;&#109;&#50;&#48;&#48;&#55;&#97;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#100;&#100;&#109;&#50;&#48;&#48;&#55;&#97;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a>
+          <a href="tel:2148830227">(214) 883-0227 &mdash; Text Preferred</a>
           <p>Service Area: Richardson / Dallas / Plano</p>
           <p>Website: mackeyit.com</p>
         </div>
 
-        <!-- Right: contact form -->
         <div class="contact-box">
           <h3>Send a Request</h3>
-
           <form
             id="contact-form"
             class="contact-form"
@@ -560,10 +553,10 @@
             method="POST"
           >
             <div class="form-row">
-              <input type="text"  name="name"     placeholder="Your Name"    required />
-              <input type="tel"   name="phone"    placeholder="Phone Number" />
+              <input type="text" name="name" placeholder="Your Name" required />
+              <input type="tel" name="phone" placeholder="Phone Number" />
             </div>
-            <input type="email" name="email"   placeholder="Email Address" required />
+            <input type="email" name="email" placeholder="Email Address" required />
 
             <select name="service" required>
               <option value="" disabled selected>What do you need help with?</option>
@@ -580,12 +573,11 @@
 
             <textarea name="message" placeholder="Briefly describe the issue or what you need..."></textarea>
 
-            <!-- Honeypot spam filter — hidden from real users -->
             <input type="text" name="_gotcha" style="display:none" />
 
             <div id="form-message" class="form-message"></div>
 
-            <button type="submit" class="form-submit-btn">Send Request →</button>
+            <button type="submit" class="form-submit-btn">Send Request &#8594;</button>
           </form>
         </div>
 
@@ -605,7 +597,7 @@
       e.preventDefault();
 
       const submitBtn = form.querySelector('button[type="submit"]');
-      submitBtn.textContent = 'Sending…';
+      submitBtn.textContent = 'Sending...';
       submitBtn.disabled = true;
 
       try {
@@ -616,20 +608,20 @@
         });
 
         if (res.ok) {
-          msg.textContent = '✓ Message sent! We\'ll be in touch soon.';
+          msg.textContent = 'Message sent! We will be in touch soon.';
           msg.className = 'form-message success';
           msg.style.display = 'block';
           form.reset();
-          submitBtn.textContent = 'Send Request →';
+          submitBtn.textContent = 'Send Request';
           submitBtn.disabled = false;
         } else {
           throw new Error('Server error');
         }
       } catch {
-        msg.textContent = '✗ Something went wrong. Please email us directly at ddm2007a@gmail.com.';
+        msg.textContent = 'Something went wrong. Please call or text us at (214) 883-0227.';
         msg.className = 'form-message error';
         msg.style.display = 'block';
-        submitBtn.textContent = 'Send Request →';
+        submitBtn.textContent = 'Send Request';
         submitBtn.disabled = false;
       }
     });
